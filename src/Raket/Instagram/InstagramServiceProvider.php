@@ -1,0 +1,45 @@
+<?php namespace Raket\Instagram;
+
+use Illuminate\Support\ServiceProvider;
+
+class InstagramServiceProvider extends ServiceProvider {
+
+	/**
+	 * Indicates if loading of the provider is deferred.
+	 *
+	 * @var bool
+	 */
+	protected $defer = false;
+
+	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot() {
+		$this->package( 'raket/instagram' );
+	}
+
+	/**
+	 * Register the service provider.
+	 *
+	 * @return void
+	 */
+	public function register()
+	{
+		/*$this->app['instagram'] = $this->app->share( function( $app ) {
+			return new Instagram( $app['url'] );
+		} );*/
+	}
+
+	/**
+	 * Get the services provided by the provider.
+	 *
+	 * @return array
+	 */
+	public function provides()
+	{
+		return array('instagram');
+	}
+
+}
